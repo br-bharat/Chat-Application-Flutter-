@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../core/constants/constants.dart';
 import 'call_provider.dart';
 
 class CallsScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class CallsScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(backgroundColor: Constant.appBarColor),
         body: ListView.builder(
           itemCount: calls.length,
           itemBuilder: (context, index) {

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 class Constant{
   static const Color primaryColor = Color(0xff6E5694);
+  static const Color appBarColor = Color(0xff6E5694);
 
   //static const titleSize =
 }

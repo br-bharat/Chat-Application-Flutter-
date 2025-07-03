@@ -21,7 +21,7 @@ class _PhoneAuthState extends State<PhoneAuth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constant.primaryColor,
+      appBar: AppBar(backgroundColor: Constant.appBarColor),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,

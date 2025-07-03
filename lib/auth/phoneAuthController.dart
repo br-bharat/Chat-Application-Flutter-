@@ -17,12 +17,24 @@ class PhoneAuthController {
       verificationFailed: (FirebaseAuthException e) {},
       codeSent: (verificationId, int? resendToken) async {
         try {
-          await FirebaseFirestore.instance
-              .collection('usersList')
+          DocumentSnapshot doc = await FirebaseFirestore.instance
+              .collection('usersList') // change this to your collection name
               .doc(phoneNumber)
-              .set({'phone_number': phoneNumber, 'joinDate': DateTime.now()});
+              .get();
+
+          if (doc.exists) {
+            await FirebaseFirestore.instance
+                .collection('usersList')
+                .doc(phoneNumber)
+                .update({'phone_number': phoneNumber, 'joinDate': DateTime.now()});
+          }
+
+          // await FirebaseFirestore.instance
+          //     .collection('usersList')
+          //     .doc(phoneNumber)
+          //     .set({'phone_number': phoneNumber, 'joinDate': DateTime.now()});
         } catch (exception) {
-          print("Error Saving Data at FireStore $exception");
+          debugPrint("Error Saving Data at FireStore $exception");
         }
 
         Navigator.push(
@@ -37,6 +49,28 @@ class PhoneAuthController {
       },
       codeAutoRetrievalTimeout: (verificationId) {},
     );
+  }
+
+  void checkDocument() async {
+    bool exists = await checkIfDocumentExists('users', 'user123');
+
+    if (exists) {
+      debugPrint('Document exists ✅');
+    } else {
+      debugPrint('Document does not exist ❌');
+    }
+  }
+
+  Future<bool> checkIfDocumentExists(
+    String collectionPath,
+    String docId,
+  ) async {
+    DocumentSnapshot doc = await FirebaseFirestore.instance
+        .collection(collectionPath)
+        .doc(docId)
+        .get();
+
+    return doc.exists;
   }
 
   // Future<void> verifyOTP(String smsCode) async {

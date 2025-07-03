@@ -3,6 +3,8 @@ import 'package:one_on_one/calls/call_screen.dart';
 import 'package:one_on_one/chats/chatScreen.dart';
 import 'package:one_on_one/status/status_screen.dart';
 
+import '../core/constants/constants.dart';
+
 class ChatHomeScreen extends StatefulWidget {
   const ChatHomeScreen({super.key});
 
@@ -24,32 +26,32 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff5649B2),
-        title: Text('Chat'),
-        titleTextStyle: TextStyle(color: Colors.white),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.white, // 👈 change color here
-            size: 18, // 👈 change size here
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(
-              right: MediaQuery.of(context).padding.right + 10,
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search, color: Colors.white,size: 18,),
-            ),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Constant.appBarColor,
+      //   title: Text('Chat'),
+      //   titleTextStyle: TextStyle(color: Colors.white),
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //     icon: Icon(
+      //       Icons.arrow_back,
+      //       color: Colors.white, // 👈 change color here
+      //       size: 18, // 👈 change size here
+      //     ),
+      //   ),
+      //   actions: [
+      //     Padding(
+      //       padding: EdgeInsets.only(
+      //         right: MediaQuery.of(context).padding.right + 10,
+      //       ),
+      //       child: IconButton(
+      //         onPressed: () {},
+      //         icon: Icon(Icons.search, color: Colors.white,size: 18,),
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,

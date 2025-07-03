@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_on_one/core/constants/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
@@ -20,7 +21,7 @@ class _MessageScreenState extends State<MessageScreen> {
   @override
   void initState() {
     super.initState();
-    final use = context.read<MessageProvider>().messages;
+    final _ = context.read<MessageProvider>().messages;
     // Load initial messages after the first frame is rendered
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final messageProvider = Provider.of<MessageProvider>(
@@ -97,7 +98,7 @@ class _MessageScreenState extends State<MessageScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff5649B2),
+        backgroundColor: Constant.appBarColor,
         title: Text(user!.name),
         titleTextStyle: TextStyle(color: Colors.white),
         leading: IconButton(
@@ -251,5 +252,4 @@ class _MessageScreenState extends State<MessageScreen> {
       _scrollToBottom();
     });
   }
-
 }

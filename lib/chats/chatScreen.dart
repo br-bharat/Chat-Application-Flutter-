@@ -133,6 +133,7 @@ import 'package:one_on_one/chats/chatProvider.dart';
 import 'package:one_on_one/message/messageScreen.dart';
 import 'package:provider/provider.dart';
 
+import '../core/constants/constants.dart';
 import 'chatModel.dart';
 import 'newMessageScreen.dart';
 
@@ -150,6 +151,10 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Constant.appBarColor,
+        title: Text('Welcome Chats',style: TextStyle(color: Colors.white),),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 30),
         child: ListView.separated(

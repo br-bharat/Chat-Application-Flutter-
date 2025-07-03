@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:one_on_one/chats/chatHome.dart';
+import 'package:one_on_one/core/constants/constants.dart';
 
 import '../auth/phone_auth.dart';
 import '../chats/chatScreen.dart';
@@ -48,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff6E5694),
+      backgroundColor: Constant.primaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

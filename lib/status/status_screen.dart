@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:one_on_one/status/status_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../core/constants/constants.dart';
+
 class StatusScreen extends StatelessWidget {
   const StatusScreen({super.key});
 
@@ -13,7 +15,7 @@ class StatusScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(backgroundColor: Constant.appBarColor),
         body: Column(
           children: [
             ListTile(

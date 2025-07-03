@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Chat App',
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: ChatHomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
